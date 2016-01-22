@@ -1,0 +1,23 @@
+.chart {
+  background: white;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.layer {
+  cursor: pointer;
+  // opacity: 0.6;
+  &.hover {
+    // opacity: 1;
+  }
+}
+
+.layer-label {
+  font-size: 1.5rem;
+}

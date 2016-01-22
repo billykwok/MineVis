@@ -1,0 +1,82 @@
+{
+	"rules": {
+		"indent": [
+			0,
+			"tab",
+			{ "SwitchCase": 1 }
+		],
+		"quotes": [
+			2,
+			"double"
+		],
+		"linebreak-style": [
+			2,
+			"unix"
+		],
+		"array-bracket-spacing": [
+			2,
+			"always"
+		],
+		"semi": [
+			2,
+			"always"
+		],
+		"comma-dangle": [
+			2,
+			"never"
+		],
+		"func-names": 0,
+		"new-cap": [
+			2,
+			{ "capIsNew": false }
+		],
+		"react/sort-comp": [
+			1,
+			{
+				"order": [
+					"lifecycle",
+					"render",
+					"everything-else"
+				],
+				"groups": {
+					"lifecycle": [
+						"displayName",
+						"propTypes",
+						"contextTypes",
+						"childContextTypes",
+						"mixins",
+						"statics",
+						"defaultProps",
+						"getDefaultProps",
+						"state",
+						"getInitialState",
+						"getChildContext",
+						"constructor",
+						"componentWillMount",
+						"componentDidMount",
+						"componentWillReceiveProps",
+						"shouldComponentUpdate",
+						"componentWillUpdate",
+						"componentDidUpdate",
+						"componentWillUnmount"
+					]
+				}
+			}
+		]
+	},
+	"env": {
+		"commonjs": true,
+		"amd": true,
+		"es6": true,
+		"browser": true
+	},
+	"parser": "babel-eslint",
+	"extends": "defaults/configurations/airbnb/es6-react",
+	"ecmaFeatures": {
+		"jsx": true,
+		"experimentalObjectRestSpread": true
+	},
+	"plugins": [
+		"react"
+	]
+}

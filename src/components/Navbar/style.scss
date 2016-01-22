@@ -1,0 +1,59 @@
+@import "../../../theme/style";
+
+.navbar {
+	composes: navbar from global;
+  height: 7rem;
+  padding-top: 2rem;
+  background-color: transparent;
+  transition: all .5s;
+}
+
+.navbar.navbar-opaque {
+    height: 4.5rem;
+    padding-top: 1rem;
+    background-color: transparentize($gray-dark, .1);;
+    .navbar-brand img {
+        height: 2rem;
+    }
+}
+
+.navbar-brand {
+    img {
+        height: 4rem;
+        transition: all .5s;
+    }
+}
+
+.navbar-toggleable-xs {
+    @include media-breakpoint-down(xs) {
+        margin-top: 3rem;
+        margin-right: -3rem;
+    }
+    .navbar-nav {
+        @include media-breakpoint-down(xs) {
+            padding-right: -3rem;
+            text-align: right;
+        }
+        .nav-item {
+            padding-left: 0.7rem;
+            @include media-breakpoint-down(xs) {
+                float: none;
+                margin-left: 1rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                background-color: transparentize($gray-dark, 0.5);
+            }
+        }
+        a {
+            color: $gray-lightest;
+            text-decoration: none;
+            @include hover-focus {
+                color: $gray-lighter;
+                text-decoration: none;
+            }
+            &:focus {
+                @include tab-focus();
+            }
+        }
+    }
+}

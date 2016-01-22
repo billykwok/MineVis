@@ -1,14 +1,21 @@
 {
-  "name": "ecs163-winter1516-project-1",
+  "name": "minevis",
   "version": "0.0.1",
-  "description": "This is the repo for Project 1 of ECS 163 Winter 15/16.",
+  "description": "Data visualisation for 13 popular Minecraft servers. UC Davis ECS 163 Winter 2016 coursework.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./node_modules/.bin/webpack-dev-server --progress --colors --inline --hot --content-base ./build/"
   },
-  "author": "Billy Kwok <xobkwok@gmail.com>",
-  "license": "ISC",
+  "author": "Billy Kwok <xobkwok@gmail.com> (http://billykwok.github.io/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billykwok/MineVis"
+  },
+  "license": "MIT",
   "dependencies": {
-    "d3": "^3.5.12",
+    "babel-core": "^6.4.5",
+    "bootstrap": "^4.0.0-alpha.2",
+    "d3": "^3.5.13",
+    "html-webpack-plugin": "^2.7.1",
     "lodash": "^3.10.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
@@ -17,6 +24,7 @@
     "babel-core": "^6.4.0",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.1",
+    "babel-plugin-react-transform": "^2.0.0",
     "babel-plugin-transform-react-constant-elements": "^6.4.0",
     "babel-plugin-transform-runtime": "^6.4.3",
     "babel-preset-es2015": "^6.3.13",
@@ -27,13 +35,20 @@
     "eslint-config-defaults": "^8.0.2",
     "eslint-plugin-react": "^3.15.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.6.2",
+    "img-loader": "^1.2.2",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.0",
     "react-hot-loader": "^1.3.0",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "stylelint": "^3.2.3",
+    "stylelint-config-standard": "^0.2.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
   }

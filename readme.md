@@ -1,0 +1,5 @@
+WITH mapServer (server_id, server_name) AS ( SELECT server_id, server_name FROM ( VALUES ('4f89d73c1dbf9d462000000a', 1), ('4fe339901dbf9d0d7500003d', 2), ('5065e0091dbf9de66600000b', 3), ('506677801dbf9d9862000004', 4), ('506ae0a41dbf9dc361000005', 5), ('5088a6c81dbf9d622a000004', 6), ('50989f1b1dbf9d412a000004', 7), ('509fb8211dbf9d6b7e000004', 8), ('50a515b81dbf9d227d000004', 9), ('50a6920a1dbf9d4413000003', 10), ('50a73dbf1dbf9d4b36000004', 11), ('50aaebde1dbf9d5064000005', 12), ('50adcfcb1dbf9d702e000010', 13), ('50b0fda51dbf9d3852000005', 14) ) AS mapServer (server_id, server_name) ) SELECT (start_t - 38880) / 1440 AS day, server_id, key, SUM(count) AS total_count FROM vedatapak_full GROUP BY day, server_id, key ORDER BY day ASC, server_id ASC, key ASC
+
+SELECT (start_t - 38880) / 1440 AS day, server_id, key, SUM(count) AS total_count FROM vedatapak_full GROUP BY day, server_id, key ORDER BY day ASC, server_id ASC, key ASC
+
+SELECT (start_t - 38880) / 1440 AS day, sm.server_name, SUM(vf.count) AS total_count FROM vedatapak_full vf JOIN server_map sm ON vf.server_id = sm.server_id GROUP BY day, vf.server_id ORDER BY day ASC, vf.server_id ASC;
