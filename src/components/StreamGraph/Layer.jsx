@@ -7,9 +7,7 @@ class Layer extends React.Component {
     color: React.PropTypes.string.isRequired,
     requestReOrdering: React.PropTypes.func
   };
-  static defaultProps = {
-    requestReOrdering: () => {}
-  };
+  static defaultProps = { requestReOrdering: () => {} };
   state = { isHovered: false };
 
   render() {
@@ -34,7 +32,7 @@ class Layer extends React.Component {
 
   handleUnhover = () => {
     this.setState({ isHovered: false });
-    this.props.requestReOrdering(0);
+    // this.props.requestReOrdering(0);
   };
 }
 

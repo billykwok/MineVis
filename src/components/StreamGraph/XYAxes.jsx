@@ -1,5 +1,4 @@
 import React from "react";
-import d3 from "d3";
 
 import Axis from "./Axis";
 
@@ -9,6 +8,10 @@ class XYAxes extends React.Component {
     height: React.PropTypes.number.isRequired,
     xScale: React.PropTypes.func.isRequired,
     yScale: React.PropTypes.func.isRequired,
+    xTick: React.PropTypes.number,
+    yTick: React.PropTypes.number,
+    xTickFormat: React.PropTypes.func,
+    yTickFormat: React.PropTypes.func,
     paddingTop: React.PropTypes.number,
     paddingRight: React.PropTypes.number,
     paddingLeft: React.PropTypes.number,
@@ -19,26 +22,23 @@ class XYAxes extends React.Component {
   };
 
   render() {
-    const { height, xScale, yScale,
+    const { height, xScale, yScale, xTick, yTick, xTickFormat, yTickFormat,
       paddingTop, paddingBottom } = this.props;
     return (
       <g className="xy-axes">
         <Axis
-          translate={`translate(0, ${height - paddingTop - paddingBottom + 5})`}
+          translate={`translate(0, ${height - paddingTop - paddingBottom})`}
           scale={xScale}
           orient="bottom"
-          ticks={14}
-          tickFormat={d => "Day " + d}
+          ticks={xTick}
+          tickFormat={xTickFormat}
         />
         <Axis
-          translate={`translate(0, 5)`}
+          translate={`translate(0, 0)`}
           scale={yScale}
           orient="left"
-          ticks={5}
-          tickFormat={d => {
-            const prefix = d3.formatPrefix(d);
-            return prefix.scale(d) + prefix.symbol;
-          }}
+          ticks={yTick}
+          tickFormat={yTickFormat}
         />
       </g>
     );

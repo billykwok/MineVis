@@ -2,7 +2,7 @@ import React from "react";
 
 function translate(x, y) { return `translate(${x}, ${y})`; }
 
-const Container = props => {
+const Chart = props => {
   const { children, width, height, xAxisHeight, yAxisWidth,
     marginTop, marginRight, marginLeft, marginBottom,
     paddingTop, paddingRight, paddingLeft, paddingBottom } = props;
@@ -30,7 +30,7 @@ const Container = props => {
   );
 };
 
-Container.propTypes = {
+Chart.propTypes = {
   children: React.PropTypes.oneOfType([
     React.PropTypes.arrayOf(React.PropTypes.node),
     React.PropTypes.node
@@ -49,4 +49,4 @@ Container.propTypes = {
   paddingBottom: React.PropTypes.number
 };
 
-export default Container;
+export default Chart;

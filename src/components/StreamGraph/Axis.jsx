@@ -31,8 +31,8 @@ class Axis extends React.Component {
 
   renderAxis() {
     const { orient, scale, ticks, tickFormat } = this.props;
-    const axis = d3.svg.axis().ticks(ticks).tickFormat(tickFormat).scale(scale);
-    d3.select(this.refs.axis).call(axis.orient(orient));
+    const axis = d3.svg.axis().tickFormat(tickFormat).scale(scale);
+    d3.select(this.refs.axis).call((ticks ? axis.ticks(ticks) : axis).orient(orient));
   }
 }
 

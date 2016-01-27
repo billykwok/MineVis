@@ -21,3 +21,8 @@
 .layer-label {
   font-size: 1.5rem;
 }
+
+.vertical,
+.layer-label {
+  pointer-events: none;
+}
